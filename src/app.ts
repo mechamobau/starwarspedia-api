@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use('/api', swapiRouter);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const startServer = async () => {
   await connectRedis();
