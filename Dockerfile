@@ -12,6 +12,8 @@ RUN npm run build
 FROM node:18-alpine
 WORKDIR /app
 ENV NODE_ENV=production
+ENV REDIS_HOST=localhost
+ENV REDIS_PORT=6379
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package*.json ./
 RUN npm ci --only=production
